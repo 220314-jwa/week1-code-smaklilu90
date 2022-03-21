@@ -1,12 +1,16 @@
+
 public class Food {
 	public String name;
 	public String type;
 
+// Food method accepts name and type as string
 	public Food(String name, String type) {
+	    
+	    // The 'this' keyword refers to the current object in a method i.e name and type
 		this.name = name;
 		this.type = type;
 	}
-
+// this method will concacnate the word cooked if the name object contains the word "cooked"
 	public void cook() {
 		if (!name.contains("cooked")) {
 			name = "cooked " + name;
@@ -16,9 +20,11 @@ public class Food {
 
 public class Main {
 	public static void main(String[] args) {
+	    // two strings "potato" and "vegetable" are passed to Food method and the value is stored in myFood as an object. 
 		Food myFood = new Food("potato", "vegetable");
+		// myFood object is passed to the cook method
 		myFood.cook();
-
+         // prints "potato" and "vegetable" because both words don't contain the word cooked in them. 
 		System.out.println(myFood.name);
 	}
 }
