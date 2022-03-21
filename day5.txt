@@ -1,9 +1,11 @@
+// this is an html form with an input labeled food name
 <html>
 	<head>
 		<title>Daily Code Review</title>
 	</head>
 	<body>
 		<h1>Cook your food!</h1>
+ // the action attribute specifies where to send the form-data 
 		<form action="http://localhost:8080/cook">
 			<label for="foodName">Food Name:</label>
 			<input id="foodName" name="foodName" type="text">
@@ -18,8 +20,11 @@ public static void main(String[] args) {
 	app.start();
 
 	app.get("cook", ctx -> {
+       // gets the foodName from the HTML 
 		String foodSent = ctx.formParam("foodName");
+       // stores the value in cookedFood object 
 		String cookedFood = "cooked " + foodSent;
+       //Prints the cookedFood i.e the food that is enterd in the HTML form
 		ctx.result("Here's your food! <br>" + cookedFood);
 	});
 }
