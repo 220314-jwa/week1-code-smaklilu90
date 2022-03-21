@@ -3,9 +3,10 @@ public class Main {
 		Javalin app = Javalin.create();
 
 		app.start();
-
+// request with method GET and URI "foods"
 		app.get("foods", ctx -> {
 			Food myFood = new Food("carrots", "vegetable");
+//prints the names of the food 
 			ctx.result("You got: " + myFood.name);
 		});
 	}
