@@ -1,10 +1,18 @@
-public static void main(String[] args) {
+class Main {  
+ public static void main(String[] args) {
+  //gets the value of foods from getFoodTypes method //and set it to foodTypes array
 	String[] foodTypes = getFoodTypes();
+  
+  // setts the value of myType using an array index  //from foodTypes array. myType is now "dinner"
 	String myType = foodTypes[2];
 
+  //getFoodsBYType method accepts myType as a parameter //and setts the value of foodsofMyType string
 	String[] foodsOfMyType = getFoodsByType(myType);
-	
+
+  //this will loop thru the array that is returned from //getFoodsByType method. 
 	for (String food : foodsOfMyType) {
+
+    //prints the results in this case 'curry','stir fry'and 'burger'
 		System.out.println(food);
 	}
 }
@@ -14,6 +22,7 @@ public static String[] getFoodTypes() {
 	return foodTypes;
 }
 
+// this method accepts a paramter and after it evalues //the value with switch, returns the vale as food. 
 public static String[] getFoodsByType(String type) {
 	String[] foods = new String[3];
 
@@ -49,4 +58,5 @@ public static String[] getFoodsByType(String type) {
 	}
 
 	return foods;
+}
 }
